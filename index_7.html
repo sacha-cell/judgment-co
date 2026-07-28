@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Judgment Co. — The execution is automated. The judgment isn't.</title>
+<meta name="description" content="Judgment Co. is the judgment layer for AI-era marketing. A service of Orbis Team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#000000;
+    --charcoal-2:#0A0A0A;
+    --cream:#F4F0E4;
+    --cream-2:#EBE5D3;
+    --gold:#D4A853;
+    --gold-dim:#8C7A52;
+    --ink:#1A1815;
+    --line-dark:rgba(244,240,228,0.14);
+    --line-light:rgba(26,24,21,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .serif{font-family:'Fraunces', serif;}
+  section{padding:min(14vw,120px) min(6vw,64px);}
+  .dark{background:var(--charcoal); color:var(--cream);}
+  .dark .muted{color:rgba(244,240,228,0.62);}
+  .light .muted{color:rgba(26,24,21,0.6);}
+  .wrap{max-width:920px; margin:0 auto;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:22px;
+    display:block;
+  }
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:relative;
+  }
+  .hero-mark{
+    position:absolute;
+    top:min(6vw,48px);
+    left:min(6vw,64px);
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:15px;
+    letter-spacing:0.02em;
+  }
+  .hero-mark span{color:var(--gold-dim); font-style:italic; font-weight:400;}
+  .mark-img{height:46px; width:auto; display:block;}
+  .stat-row{
+    display:flex;
+    gap:min(6vw,56px);
+    margin-top:52px;
+    flex-wrap:wrap;
+  }
+  .stat{display:flex; flex-direction:column;}
+  .stat-num{
+    font-family:'Fraunces',serif;
+    font-size:clamp(24px,3vw,34px);
+    color:var(--gold);
+    font-weight:500;
+    line-height:1.1;
+  }
+  .stat-label{
+    font-size:12px;
+    letter-spacing:0.04em;
+    color:rgba(244,240,228,0.5);
+    margin-top:6px;
+    max-width:14ch;
+  }
+  .hero h1{
+    font-size:clamp(38px, 7vw, 84px);
+    font-weight:400;
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold);
+    font-weight:400;
+  }
+  .hero p.lede{
+    margin-top:32px;
+    max-width:46ch;
+    font-size:clamp(16px,2vw,19px);
+    line-height:1.6;
+    color:rgba(244,240,228,0.72);
+  }
+  .hero-foot{
+    position:absolute;
+    bottom:min(6vw,48px);
+    left:min(6vw,64px);
+    right:min(6vw,64px);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    font-size:12px;
+    color:rgba(244,240,228,0.42);
+    letter-spacing:0.04em;
+  }
+  .scroll-cue{
+    width:1px; height:40px;
+    background:linear-gradient(to bottom, rgba(212,168,83,0.9), transparent);
+    margin-left:auto;
+  }
+
+  /* THESIS / REPRICING */
+  .repricing .wrap{ }
+  .repricing h2{
+    font-size:clamp(28px,4vw,44px);
+    font-weight:400;
+    line-height:1.2;
+    max-width:16ch;
+    margin-bottom:36px;
+  }
+  .repricing p{
+    font-size:clamp(16px,1.6vw,18.5px);
+    line-height:1.75;
+    max-width:62ch;
+    margin-bottom:20px;
+  }
+  .repricing p:last-of-type{margin-bottom:0;}
+  .repricing strong{font-weight:600; color:var(--ink);}
+
+  /* SIGNATURE: automated vs judgment */
+  .compare{
+    background:var(--charcoal);
+    color:var(--cream);
+  }
+  .compare .wrap{max-width:1040px;}
+  .compare-head{margin-bottom:56px;}
+  .compare-head h2{
+    font-size:clamp(26px,3.6vw,38px);
+    font-weight:400;
+    max-width:20ch;
+    line-height:1.25;
+  }
+  .compare-grid{
+    display:grid;
+    grid-template-columns:1fr 1px 1fr;
+    gap:0 min(5vw,56px);
+  }
+  .compare-col{padding:8px 0;}
+  .compare-divider{background:var(--line-dark);}
+  .compare-label{
+    font-size:11px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    font-weight:600;
+    margin-bottom:20px;
+  }
+  .compare-col.left .compare-label{color:rgba(244,240,228,0.4);}
+  .compare-col.right .compare-label{color:var(--gold);}
+  .compare-line{
+    font-family:'Fraunces',serif;
+    font-size:clamp(17px,2vw,21px);
+    line-height:1.55;
+    padding:16px 0;
+    border-bottom:1px solid var(--line-dark);
+  }
+  .compare-col.left .compare-line{color:rgba(244,240,228,0.4); font-style:italic;}
+  .compare-col.right .compare-line{color:var(--cream);}
+  .compare-line:last-child{border-bottom:none;}
+  @media (max-width:640px){
+    .compare-grid{grid-template-columns:1fr; gap:36px 0;}
+    .compare-divider{display:none;}
+  }
+
+  /* OFFER */
+  .offer .wrap{max-width:880px;}
+  .offer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-bottom:48px;
+    border-bottom:1px solid var(--line-light);
+    padding-bottom:36px;
+  }
+  .offer h2{
+    font-size:clamp(28px,4vw,42px);
+    font-weight:400;
+    line-height:1.15;
+    max-width:14ch;
+  }
+  .offer-sub{
+    max-width:30ch;
+    font-size:15px;
+    line-height:1.6;
+    color:rgba(26,24,21,0.62);
+    padding-top:8px;
+  }
+  .offer-list{list-style:none;}
+  .offer-item{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:22px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line-light);
+  }
+  .offer-item:first-child{padding-top:0;}
+  .offer-num{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:20px;
+    color:var(--gold-dim);
+  }
+  .offer-item h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:19px;
+    margin-bottom:8px;
+  }
+  .offer-item p{
+    font-size:15px;
+    line-height:1.65;
+    color:rgba(26,24,21,0.68);
+    max-width:56ch;
+  }
+
+  /* CTA */
+  .cta{
+    background:var(--charcoal-2);
+    color:var(--cream);
+    text-align:center;
+  }
+  .cta .wrap{max-width:640px;}
+  .cta h2{
+    font-size:clamp(30px,5vw,48px);
+    font-weight:400;
+    line-height:1.15;
+    margin-bottom:24px;
+  }
+  .cta h2 em{color:var(--gold); font-style:italic;}
+  .cta p{
+    font-size:16px;
+    color:rgba(244,240,228,0.62);
+    max-width:44ch;
+    margin:0 auto 40px;
+    line-height:1.65;
+  }
+  .btn{
+    display:inline-block;
+    padding:16px 36px;
+    background:var(--gold);
+    color:var(--charcoal);
+    text-decoration:none;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.02em;
+    border-radius:2px;
+    transition:opacity 0.2s ease;
+  }
+  .btn:hover{opacity:0.85;}
+
+  footer{
+    padding:36px min(6vw,64px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+    font-size:12.5px;
+    color:rgba(244,240,228,0.4);
+    background:var(--charcoal-2);
+    border-top:1px solid var(--line-dark);
+  }
+  footer a{color:rgba(244,240,228,0.6); text-decoration:none;}
+  footer a:hover{color:var(--gold);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero dark">
+  <div class="hero-mark"><img src="logo/judgmentco-wordmark-light.png" alt="Judgment Co." class="mark-img"></div>
+  <div class="wrap">
+    <h1>The execution<br>is automated.<br><em>The judgment isn't.</em></h1>
+    <p class="lede">Production is nearly free now. That didn't make marketing easier — it made the filter more valuable. Judgment Co. is that filter: the strategic layer that decides what's worth doing before AI does it fast.</p>
+    <div class="stat-row">
+      <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Years Combined Experience</span></div>
+      <div class="stat"><span class="stat-num">$250M+</span><span class="stat-label">In Managed Ad Revenue</span></div>
+      <div class="stat"><span class="stat-num">3</span><span class="stat-label">Acquisition Exits</span></div>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <span>A service of Orbis Team</span>
+    <div class="scroll-cue"></div>
+  </div>
+</section>
+
+<section class="repricing light">
+  <div class="wrap">
+    <span class="eyebrow">The Repricing</span>
+    <h2>Everyone has the same tools now. That's the problem.</h2>
+    <p>Campaign builds that took a team a month now take one operator an afternoon. Blog posts that cost hundreds now cost pennies. The production layer of marketing has been repriced to near zero — and every agency, every in-house team, every competitor has access to the same collapse.</p>
+    <p><strong>Cheap production doesn't create an advantage. It removes one.</strong> When everyone can generate the same volume of content, at the same speed, with the same tools, the thing that separates outcomes stops being output — and starts being the judgment behind it: what to make, who it's for, and what never should have shipped.</p>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="wrap">
+    <div class="compare-head">
+      <span class="eyebrow">What Changes</span>
+      <h2>Automation gives you more. Judgment tells you what matters.</h2>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col left">
+        <div class="compare-label">Automated</div>
+        <div class="compare-line">A hundred versions of the same idea, reworded</div>
+        <div class="compare-line">A new ad channel, tested because it's new</div>
+        <div class="compare-line">A campaign that's technically fine</div>
+        <div class="compare-line">Content built for volume</div>
+      </div>
+      <div class="compare-divider"></div>
+      <div class="compare-col right">
+        <div class="compare-label">Judgment</div>
+        <div class="compare-line">One real insight, segmented for a hundred audiences</div>
+        <div class="compare-line">A new ad channel, tested because it fits</div>
+        <div class="compare-line">A campaign that's strategically right</div>
+        <div class="compare-line">Content built for who it's actually for</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer light">
+  <div class="wrap">
+    <div class="offer-top">
+      <h2>Where we start</h2>
+      <p class="offer-sub">The first engagement under Judgment Co. — built for the moment brands are in right now.</p>
+    </div>
+    <ul class="offer-list">
+      <li class="offer-item">
+        <span class="offer-num">01</span>
+        <div>
+          <h3>Agentic Commerce Readiness Audit</h3>
+          <p>AI platforms are opening new discovery and checkout surfaces — OpenAI's Agentic Commerce Protocol, Google's Universal Commerce Protocol, and what's coming next. We assess whether your product and catalog data is actually positioned to show up inside them, and exactly what to fix before you spend a dollar on the channel.</p>
+        </div>
+      </li>
+      <li class="offer-item">
+        <span class="offer-num">02</span>
+        <div>
+          <h3>Channel judgment, not channel volume</h3>
+          <p>New AI ad surfaces are launching faster than most teams can evaluate them. We tell you which ones are worth testing now, which ones to watch, and which ones are noise — before your team spends the quarter finding out the hard way.</p>
+        </div>
+      </li>
+      <li class="offer-item">
+        <span class="offer-num">03</span>
+        <div>
+          <h3>Measurement built before the channel gets crowded</h3>
+          <p>The advertisers who win a new channel are usually the ones already measuring before it got crowded. We get your attribution, tracking, and first-party data in order early — so when a channel scales, you're not scrambling to prove it worked.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Start with a <em>conversation</em>, not a pitch deck.</h2>
+    <p>Tell us what you're actually trying to figure out. We'll tell you honestly whether it's worth solving right now.</p>
+    <a class="btn" href="mailto:info@orbisteam.com?subject=Judgment%20Co.%20Inquiry">Request a Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <span>Judgment Co. — part of the <a href="https://orbisteam.com">Orbis Team</a> family &nbsp;·&nbsp; 6650 Rivers Ave, STE 100, Charleston, SC 29406</span>
+  <span><a href="https://orbisteam.com">orbisteam.com</a> &nbsp;·&nbsp; <a href="mailto:info@orbisteam.com">info@orbisteam.com</a></span>
+</footer>
+
+</body>
+</html>
