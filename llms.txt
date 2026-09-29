@@ -1,0 +1,17 @@
+# Judgment Co.
+
+> Judgment Co. is the judgment layer for AI-era marketing, a service of Orbis Team. Production got cheap; judgment got expensive. Judgment Co. is the strategic filter that decides what's worth making, for whom, and what to kill before it ships, before AI does it fast.
+
+Contact: info@orbisteam.com
+
+## Where we start
+- Agentic Commerce Readiness Audit: whether a brand's product and catalog data is positioned to show up in AI discovery and checkout surfaces (e.g. OpenAI's Agentic Commerce Protocol, Google's Universal Commerce Protocol).
+- Channel judgment, not channel volume: new channels tested because they fit, not because they're new.
+- Measurement built before the channel gets crowded.
+
+## Pages
+- [Home](https://www.judgmentco.com/)
+- [The 2026–2027 CMO Guide](https://www.judgmentco.com/guide/): free guide, "Buying media when the execution layer runs itself" ([PDF](https://www.judgmentco.com/guide/orbis-cmo-guide.pdf))
+
+## Related
+- [Orbis Team](https://www.orbisteam.com/): parent agency for retail media, CTV and programmatic

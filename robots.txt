@@ -1,0 +1,5 @@
+# Judgment Co. — all search engines and AI assistants welcome
+User-agent: *
+Allow: /
+
+Sitemap: https://www.judgmentco.com/sitemap.xml
